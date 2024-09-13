@@ -40,12 +40,6 @@ customResourceState:
                   labelsFromPath:
                     replicated_job_name: [name]
                   valueFrom: [ready]
-            - name: "jobset_restarts"
-              help: "Total number of times the JobSet has restarted"
-              each:
-                type: Gauge
-                gauge:
-                  path: [status, restarts]
 rbac:
   create: true
   useClusterRole: true
@@ -60,8 +54,8 @@ collectors: [jobs]
 resources:
   # TODO: Modify the CPU and memory limits as needed!!!
   limits:
-   cpu: 100m
-   memory: 64Mi
+   cpu: 10000m
+   memory: 4000Mi
   requests:
-   cpu: 10m
-   memory: 32Mi
+   cpu: 1000m
+   memory: 600Mi
